@@ -1,11 +1,14 @@
 apply plugin: 'com.android.library'
 
+def _compileSdkVersion = safeExtGet("compileSdkVersion", 28)
+def _targetSdkVersion = safeExtGet("targetSdkVersion", 28)
+
 android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
+    compileSdkVersion _compileSdkVersion
 
     defaultConfig {
         minSdkVersion 21
-        targetSdkVersion rootProject.ext.targetSdkVersion
+        targetSdkVersion _targetSdkVersion
         versionCode 1
         versionName "1.0"
     }
